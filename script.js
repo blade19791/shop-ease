@@ -172,7 +172,7 @@
             // Show notification
             const notification = document.createElement('div');
             notification.className = 'notification';
-            notification.textContent = ${product.title} added to cart!;
+            notification.textContent = `${product.title} added to cart!`;
             document.body.appendChild(notification);
             
             setTimeout(() => {
@@ -224,7 +224,7 @@
             
             // Update cart total
             const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            cartTotal.textContent = $${total.toFixed(2)};
+            cartTotal.textContent = `$${total.toFixed(2)}`;
         }
         
         // Update quantity
