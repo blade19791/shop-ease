@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Modern E-commerce</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Mobile Menu Backdrop -->
+    <div class="backdrop" onclick="toggleMobileMenu()"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h2>ShopEase</h2>
+            <button onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <!-- Logo and Mobile Menu Button -->
+            <div class="logo-container">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="logo">ShopEase</a>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products...">
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav class="main-nav">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Categories</a>
+            </nav>
+            
+            <!-- Cart and User Icons -->
+            <div class="icon-container">
+                <div class="cart-icon">
+                    <button onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </button>
+                </div>
+                <button class="user-icon">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Search Bar -->
+        <div class="mobile-search">
+            <div class="mobile-search-bar">
+                <input type="text" placeholder="Search products...">
+                <button>
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Cart Dropdown -->
+    <div id="cart-dropdown">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+            </button>
+            </div>
+            <div id="cart-items">
+                <!-- Cart items will be added here dynamically -->
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Summer Sale is Live!</h1>
+                <p>Get up to 50% off on selected items. Limited time offer.</p>
+                <button class="shop-btn">Shop Now</button>
+            </div>
+        </section>
+        
+        <!-- Categories Section -->
+        <section class="categories">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <button onclick="filterProducts('electronics')" class="category-btn">
+                    <i class="fas fa-laptop"></i>
+                    <span>Electronics</span>
+                </button>
+                <button onclick="filterProducts('jewelery')" class="category-btn">
+                    <i class="fas fa-gem"></i>
+                    <span>Jewelery</span>
+                </button>
+                <button onclick="filterProducts('men')" class="category-btn">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Men's Clothing</span>
+                </button>
+                <button onclick="filterProducts('women')" class="category-btn">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Women's Clothing</span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Products Section -->
+        <section class="products">
+            <div class="products-header">
+                <h2>Featured Products</h2>
+                <div class="filter-buttons">
+                    <button onclick="filterProducts('all')">All</button>
+                    <button onclick="sortProducts('asc')">Price: Low to High</button>
+                    <button onclick="sortProducts('desc')">Price: High to Low</button>
+                </div>
+            </div>
+            
+            <!-- Products Grid -->
+            <div id="products-container">
+                <!-- Loading spinner will be shown here -->
+                <div id="loading-spinner" class="loading-spinner"></div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates on new products and upcoming sales</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shop for all your needs. Quality products at affordable prices.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <address>
+                        <p>123 Shopping Street</p>
+                        <p>Retail City, RC 10001</p>
+                        <p>Email: info@shopease.com</p>
+                        <p>Phone: (123) 456-7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 ShopEase. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
+    
+   
