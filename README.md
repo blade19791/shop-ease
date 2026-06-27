@@ -1,7 +1,5 @@
 # ShopEase
 
-![ShopEase Screenshot](Pictures/Screenshots/shop-ease.png)
-
 A simple, single-page e-commerce front-end built with vanilla HTML, CSS, and JavaScript. Features a functional shopping cart, product filtering, price sorting, and a responsive mobile-friendly layout.
 
 <p align="center">
