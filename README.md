@@ -4,6 +4,10 @@
 
 A simple, single-page e-commerce front-end built with vanilla HTML, CSS, and JavaScript. Features a functional shopping cart, product filtering, price sorting, and a responsive mobile-friendly layout.
 
+<p align="center">
+  <img src="screenshot/shop-ease.png" alt="Shop ease Screenshot" width="800">
+</p>
+
 ## Features
 
 - Product catalog with category filtering and price sorting
